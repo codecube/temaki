@@ -1,0 +1,9 @@
+
+	<ul>
+	<% @collections.each do |collection| %>
+	<li>
+		<%=link_to collection.title, "/collection/"+collection.name%>
+	</li>
+	<% end %>
+	</ul>
+

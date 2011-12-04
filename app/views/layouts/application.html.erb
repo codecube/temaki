@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temaki. Your content, hand rolled</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="container">
+		<nav id="top_nav">	
+			<%= image_tag "photo_thumb.png" %> <%=link_to "Codecube", "#"%> &nbsp; | &nbsp; <%=link_to "Settings", "#"%> &nbsp; | &nbsp; <%=link_to "Log Out", "#"%>
+		</nav>
+		<nav id="main_nav">
+			<%=link_to "Collections", "#"%> &nbsp; | &nbsp; <%=link_to "Data Templates", "#"%>
+		</nav>
+		<%= yield %>
+	</div>
+</body>
+</html>

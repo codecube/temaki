@@ -1,0 +1,26 @@
+<h1>New Collection</h1>
+<%= form_tag("create", :method => "post") do %>
+  <div>
+  	<%= label_tag(:name, "Name:") %><br/>
+  	<%= text_field_tag(:name, "",:size=>30) %>
+  </div>
+  <div>
+  	<%= label_tag(:title, "Title:") %><br/>
+  	<%= text_field_tag(:title, "",:size=>30) %>
+  </div>
+  <div>
+  	<%= label_tag(:description, "Description:") %><br/>
+  	<%= text_field_tag(:description, "",:size=>30) %>
+  </div>
+  <div>
+  	<strong>Allowed Data Templates:</strong><br/>
+  	<% @data_templates.each do |data_template| %>
+  		<%= check_box_tag(:data_template_ids, data_template._id) %>
+  		<%= label_tag(:data_template_ids, data_template.title) %><br/>
+	<% end %>
+  </div>
+  <div>
+  	<%= submit_tag("Create Collection") %>
+  </div>
+<% end %>
+

@@ -1,0 +1,63 @@
+$red: #E31914;
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	font-size: 0.9em;
+}
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+/* TOP */
+
+#top_nav {
+	display:block;
+	height: 44px;
+	background: image-url("bg_header.png") no-repeat;
+	text-align: right;
+	color: #FFFFFF;
+	padding: 8px;
+	padding-right:20px;
+}
+
+#top_nav a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#top_nav a:hover {
+	text-decoration:underline;
+}
+
+#top_nav img {
+	vertical-align:middle; 
+	padding-bottom: 5px; 
+	padding-right: 3px;
+}
+	
+#main_nav {
+	display: block;
+	height: 200px;
+	background: image-url("temaki.png") no-repeat;
+	background-position: 30px 35px;
+	text-align: right;
+	padding-right:20px;
+	padding-top: 20px;
+}
+
+#main_nav a {
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#main_nav a:hover {
+	text-decoration:underline;
+}
+
