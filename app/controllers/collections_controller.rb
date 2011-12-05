@@ -16,7 +16,7 @@ class CollectionsController < ApplicationController
   # this RESTful request will be "/collection", and the data will be
   # sent as part of the request body.
   def create
-    @collection = DataCollection.new(:name => params[:name], :title => params[:title], :data_template_ids => [params[:data_template_ids]])
+    @collection = DataCollection.new(:name => params[:name], :title => params[:title],:description => params[:description], :count => 0 , :data_template_ids => [params[:data_template_ids]])
     
     
     

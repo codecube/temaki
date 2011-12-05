@@ -12,9 +12,42 @@
 			<%= image_tag "photo_thumb.png" %> <%=link_to "Codecube", "#"%> &nbsp; | &nbsp; <%=link_to "Settings", "#"%> &nbsp; | &nbsp; <%=link_to "Log Out", "#"%>
 		</nav>
 		<nav id="main_nav">
-			<%=link_to "Collections", "#"%> &nbsp; | &nbsp; <%=link_to "Data Templates", "#"%>
+			<%=link_to "Collections", "#"%> &nbsp; | &nbsp; <%=link_to "Data Templates", "#"%>  &nbsp; &nbsp; <input type="text" placeholder="Search..." id="search_box"></input>
 		</nav>
-		<%= yield %>
+		<div id="content">
+			<aside>
+			<header>
+				<h1>Recent Activity</h1>
+			</header>
+		
+				<article>
+					<hgroup>
+						<h1>Teste</h1>
+						<h2>teste teste</h2>
+					</hgroup>
+					<footer>03-12-2011 13:45<br/>edited by <strong>Codecube</strong></footer>
+				</article>
+				<article>
+					<hgroup>
+						<h1>Teste</h1>
+						<h2>teste teste</h2>
+					</hgroup>
+					<footer>03-12-2011 13:45<br/>edited by <strong>Codecube</strong></footer>
+				</article>
+				<article>
+					<hgroup>
+						<h1>Teste</h1>
+						<h2>teste teste</h2>
+					</hgroup>
+					<footer>03-12-2011 13:45<br/>edited by <strong>Codecube</strong></footer>
+				</article>
+			</aside>
+			
+			<section>
+			<%= yield %>
+			</section>
+			
+		</div>
 	</div>
 </body>
 </html>

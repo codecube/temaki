@@ -12,6 +12,147 @@ html, body {
 	margin: 0 auto;
 }
 
+h1 {
+  font-size: 36px;
+  font-weight: normal;
+  color: $red;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  
+}
+
+.table_options {
+float:right;
+margin: 10px;
+margin-top:20px;
+}
+
+.table {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.table li {
+ list-style: none;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.table h2 {
+  margin-bottom: 0px;
+  margin-top:0px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #333333;
+}
+
+.table a {
+  display: block;
+  margin: 0px;
+  color: #999999;
+  padding-top: 30px;
+  padding: 15px;
+  height: 40px;
+  text-decoration: none;
+}
+
+.table .counter {
+  margin-top:3px;
+  width: 32px;
+  height: 15px;
+  color: #FFFFFF;
+  font-size: 10px;
+  text-align: center;
+  background: image-url("bg_counter.png") no-repeat;
+  float: left;
+}
+
+.table .cell {
+  margin-left: 40px;
+}
+
+
+#content {
+  margin: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+#content section {
+  display: block;
+  width: 500px;
+  margin-left: 30px;
+ 
+}
+
+#content aside {
+  display: block;
+  width: 300px;
+  float: right;
+  text-align: right;
+}
+
+#content aside article {
+display: block; 
+border-bottom: 1px solid #CCCCCC;
+height: 70px;
+padding-left: 10px;
+padding-right: 10px;
+
+
+}
+
+
+#content aside header h1 {
+  color:#FFFFFF;
+  background-color: #999999;
+  padding-bottom: 0px;
+  padding-top: 8px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#content aside article h1 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  border: 0;
+  padding: 0;
+}
+
+#content aside article h2 {
+  font-size: 11px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+
+#content aside article hgroup {
+  float: right;
+  text-align: right;
+}
+
+
+
+#content aside article footer {
+text-align: left;
+float: left;
+display: block;
+margin-top: 30px;
+font-size: 11px;
+}
+
 
 /* TOP */
 
@@ -48,7 +189,6 @@ html, body {
 	background-position: 30px 35px;
 	text-align: right;
 	padding-right:20px;
-	padding-top: 20px;
 }
 
 #main_nav a {
@@ -60,4 +200,15 @@ html, body {
 #main_nav a:hover {
 	text-decoration:underline;
 }
+
+#search_box {
+  border: 1px solid #CCCCCC; 
+  padding:3px;
+  padding-left: 23px;
+  background: image-url("bg_search.png") no-repeat;
+  background-position: 2px 1px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
 

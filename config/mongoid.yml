@@ -1,7 +1,12 @@
+#host: localhost
+  #database: temaki_development
 development:
-  host: localhost
-  database: temaki_development
-
+  host: staff.mongohq.com
+  port: 10028
+  username: pmcosta
+  password: wpower123
+  database: temaki
+  
 test:
   host: localhost
   database: temaki_test
