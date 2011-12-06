@@ -43,10 +43,11 @@ text = DataTemplateField.new(
 page_template = DataTemplate.create(
 title: 'Page Template',
 description: 'Use this template to create a simple page',
+
 data_template_fields: [title, description, text]
 )
 
-page = DataCollection.create(name: 'pages', title: 'Pages', description: 'Pages Collection', data_templates: [ page_template ])
+page = DataCollection.create(name: 'pages', title: 'Pages', description: 'Pages Collection', data_templates: [ page_template ], count: 0,)
 
 
 

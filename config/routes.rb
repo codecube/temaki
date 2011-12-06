@@ -13,6 +13,7 @@ Temaki::Application.routes.draw do
     match 'collection/:collection' => 'documents#index', :via => :get
     
     match 'collection/:collection/new' => 'documents#new', :via => :get
+    match 'collection/:collection/create' => 'documents#create',:via => :post
     match 'collection/:collection/:id' => 'documents#show', :via => :get
     
   # Sample of regular route:

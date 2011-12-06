@@ -1,0 +1,20 @@
+#content form div {
+  
+  margin:20px;
+}
+
+#content form input, #content form textarea {
+  border: 1px solid #CCCCCC; 
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 5px;
+  margin-bottom: 10px;
+  
+}
+
+.label_title {
+  font-weight:bold;
+  display:block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}

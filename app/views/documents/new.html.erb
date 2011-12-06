@@ -1,4 +1,22 @@
-	<h2>new document</h2>
-	<%=@templates%>
+	<h1><%=@collection.title%> <span>> New</span></h1>
+	<%= form_tag("create", :method => "post") do %>
+	
+		<% @collection.data_templates.each do |data_template| %>
+  		<h2><%= data_template.title%></h2>
+  		<%  data_template.data_template_fields.each do |field| %>
+  		<%= text_form('', field) %>
+  		
+  		
+  		
+	<% end %>
+	<%= hidden_field_tag 'data_template_id', data_template._id %>
+	<%= hidden_field_tag 'data_collection_ids[]', @collection._id %>
+  		<div>
+  		<%= submit_tag("Create Document") %>
+  		</div>
+  		<% end %>	
+  		
+	<% end %>
+	
 
 		

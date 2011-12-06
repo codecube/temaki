@@ -3,8 +3,8 @@
 development:
   host: staff.mongohq.com
   port: 10028
-  username: pmcosta
-  password: wpower123
+  username: codecube
+  password: 123456
   database: temaki
   
 test:

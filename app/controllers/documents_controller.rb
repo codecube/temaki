@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
   
   def index
     @collection = DataCollection.first(conditions: {name: params[:collection]})
-    @documents = DataDocument.where(data_collection: @collection)
+    @documents = DataDocument.all(conditions: {data_collection_ids: @collection._id})
     
     
   end
@@ -18,8 +18,8 @@ class DocumentsController < ApplicationController
     @collection = DataCollection.first(conditions: {name: params[:collection]})
     #@data_collection = MONGO_DB['data_collection'].find(:_id => params[:collection])
     
-   @templates=@data_collection.as_json
-    
+   
+    @data_document = DataDocument.new
     #@templates = BSON::OrderedHash.new
     #@templates = data_collection
     
@@ -34,5 +34,17 @@ class DocumentsController < ApplicationController
     # 4th save document in mongo db
 
   end
+  
+   def create
+    @data_document = DataDocument.new(params)
+    if @data_document.save
+      redirect_to("/collections")
+    else
+      # This line overrides the default rendering behavior, which
+      # would have been to render the "create" view.
+      #render :action => "new"
+    end
+  end
+  
 
 end

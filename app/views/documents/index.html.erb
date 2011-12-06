@@ -1,5 +1,19 @@
-	<h1><%=@collection.title%></h1>
-	<ul>
-		
+	<div class="table_options"><%= image_tag "bt_more_dark.png" %> 
+	<a href="/collection/<%=@collection.name%>/new"><%= image_tag ("bt_add_dark.png" )%></a>
 	
+	</div>
+	<h1> <%=@collection.title%> <span>> Collection</span></h1>
+	<ul class="table">
+	<% @documents.each do |document| %>
+	<li>
+		<a href="/collection/<%=@collection.name%> /<%=document._id%>">
+			<div class="counter">
+				
+			</div>
+			<div class="cell"><h2><%=document.title%></h2>
+				<%=document.description%>
+			</div>
+		</a>
+	</li>
+	<% end %>
 	</ul>

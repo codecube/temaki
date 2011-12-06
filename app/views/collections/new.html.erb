@@ -1,19 +1,19 @@
-<h1>New Collection</h1>
+<h1>Collection <span>> New</span></h1>
 <%= form_tag("create", :method => "post") do %>
   <div>
-  	<%= label_tag(:name, "Name:") %><br/>
-  	<%= text_field_tag(:name, "",:size=>30) %>
+  	<%= label_tag :name, "Name:", :class => 'label_title' %>
+  	<%= text_field_tag(:name, "",{:size=>60, :placeholder => 'a unique name for your collection, avoid spaces and special chars'}) %>
   </div>
   <div>
-  	<%= label_tag(:title, "Title:") %><br/>
-  	<%= text_field_tag(:title, "",:size=>30) %>
+  	<%= label_tag :title, "Title:" , {:class => 'label_title'} %>
+  	<%= text_field_tag(:title, "", {:size=>60, :placeholder => 'the title of your collection'}) %>
   </div>
   <div>
-  	<%= label_tag(:description, "Description:") %><br/>
-  	<%= text_field_tag(:description, "",:size=>30) %>
+  	<%= label_tag :description, "Description:", :class => 'label_title' %>
+  	<%= text_area_tag(:description, "",:size=>'50x5') %>
   </div>
   <div>
-  	<strong>Allowed Data Templates:</strong><br/>
+  	<span class="label_title">Allowed Data Templates:</span>
   	<% @data_templates.each do |data_template| %>
   		<%= check_box_tag(:data_template_ids, data_template._id) %>
   		<%= label_tag(:data_template_ids, data_template.title) %><br/>
