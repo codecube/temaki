@@ -5,13 +5,23 @@
 	</div><h1>Collections</h1>
 	<div class="table">
 	<% @collections.each do |collection| %>
-	<article>
-		<a href="/collection/<%=collection.name%>">
-			<div class="counter">
-				<%=collection.count%>
+	<article class="table_item">
+		
+			<div class="table_item_menu">
+			 <div>
+			 	<a href="/collection/<%= collection.name%>">
+				<%= image_tag "bt_enter_light.png" %></a></div>
+			  	<div>
+			   		<a href="/collection/<%= collection.name%>/delete"><%= image_tag "bt_delete_light.png" %></a>
+					<a href="/collection/<%= collection.name%>/edit"><%= image_tag "bt_edit_light.png" %></a>
+				</div>
 			</div>
-			<div class="cell"><h2><%=collection.title%></h2>
-				<%=collection.description%>
+			<a href="/collection/<%=collection.name%>">
+			<div class="counter">
+				<%= collection.count %>
+			</div>
+			<div class="cell"><h2><%= collection.title %></h2>
+				<%= collection.description %>
 			</div>
 		</a>
 	</article>

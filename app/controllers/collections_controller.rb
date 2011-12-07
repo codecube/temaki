@@ -5,10 +5,7 @@ class CollectionsController < ApplicationController
   end
 
   def index
-
-
-		@collections = DataCollection.all
-    
+    @collections = DataCollection.all(sort: [[:created_at, :desc]])
   end
 
   # This action uses POST parameters. They are most likely coming
@@ -17,9 +14,6 @@ class CollectionsController < ApplicationController
   # sent as part of the request body.
   def create
     @collection = DataCollection.new(:name => params[:name], :title => params[:title],:description => params[:description], :count => 0 , :data_template_ids => [params[:data_template_ids]])
-    
-    
-    
     if @collection.save
       redirect_to("/collections")
     else

@@ -7,12 +7,13 @@
 	<% @documents.each do |document| %>
 	<article class="table_item">
 		<div class="table_item_menu">
-			 <div><a href="/collection/<%=@collection.name%>/<%=document._id%>">
+			 <div>
+			 	<a href="/collection/<%=@collection.name%>/<%=document._id%>">
 				<%= image_tag "bt_enter_light.png" %></a></div>
-			   <div><a href="/collection/<%=@collection.name%>/delete/<%=document._id%>"><%= image_tag "bt_delete_light.png" %></a>
-				<a href="/collection/<%=@collection.name%>/edit/<%=document._id%>"><%= image_tag "bt_edit_light.png" %></a></div>
-				
-				
+			  	<div>
+			   		<a href="/collection/<%=@collection.name%>/<%=document._id%>/delete"><%= image_tag "bt_delete_light.png" %></a>
+					<a href="/collection/<%=@collection.name%>/<%=document._id%>/edit"><%= image_tag "bt_edit_light.png" %></a>
+				</div>
 			</div>
 		<a href="/collection/<%=@collection.name%>/<%=document._id%>">
 			

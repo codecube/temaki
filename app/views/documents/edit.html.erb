@@ -1,0 +1,13 @@
+<h1><%= @collection.title%> <span>> New</span></h1>
+<%= form_tag("update", :method => "post") do %>
+
+<h2><%= @data_template.title%></h2>
+<%  @data_template.data_template_fields.each do |field| %>
+	<%= send(field.input_type+'_form', @document[field.input_name], field) %>
+<% end %>
+<%= hidden_field_tag 'data_collection_ids[]', @document.data_collection_ids %>
+<div>
+	<%= submit_tag("Edit Document") %>
+</div>
+<% end %>
+
