@@ -3,17 +3,25 @@
 	
 	</div>
 	<h1> <%=@collection.title%> <span>> Collection</span></h1>
-	<ul class="table">
+	<div class="table">
 	<% @documents.each do |document| %>
-	<li>
-		<a href="/collection/<%=@collection.name%> /<%=document._id%>">
-			<div class="counter">
+	<article class="table_item">
+		<div class="table_item_menu">
+			 <div><a href="/collection/<%=@collection.name%>/<%=document._id%>">
+				<%= image_tag "bt_enter_light.png" %></a></div>
+			   <div><a href="/collection/<%=@collection.name%>/delete/<%=document._id%>"><%= image_tag "bt_delete_light.png" %></a>
+				<a href="/collection/<%=@collection.name%>/edit/<%=document._id%>"><%= image_tag "bt_edit_light.png" %></a></div>
+				
 				
 			</div>
+		<a href="/collection/<%=@collection.name%>/<%=document._id%>">
+			
 			<div class="cell"><h2><%=document.title%></h2>
 				<%=document.description%>
 			</div>
+						
+			
 		</a>
-	</li>
+	</article>
 	<% end %>
-	</ul>
+	</div>

@@ -3,9 +3,9 @@
 	<a href="/collections/new"><%= image_tag ("bt_add_dark.png" )%></a>
 	
 	</div><h1>Collections</h1>
-	<ul class="table">
+	<div class="table">
 	<% @collections.each do |collection| %>
-	<li>
+	<article>
 		<a href="/collection/<%=collection.name%>">
 			<div class="counter">
 				<%=collection.count%>
@@ -14,7 +14,7 @@
 				<%=collection.description%>
 			</div>
 		</a>
-	</li>
+	</article>
 	<% end %>
-	</ul>
+	</div>
 
