@@ -1,26 +1,30 @@
-<h1>Collection <span>> New</span></h1>
-<%= form_tag('/collections', :method => "post") do %>
+<h1>Collection <span>> Edit</span></h1>
+<%= form_tag('update', :method => "post") do %>
   <div>
   	<%= label_tag :name, "Name:", :class => 'label_title' %>
-  	<%= text_field_tag(:name, "",{:size=>60, :placeholder => 'a unique name for your collection, avoid spaces and special chars'}) %>
+  	<%= text_field_tag(:name, @collection.name, {:size=>60, :placeholder => 'a unique name for your collection, avoid spaces and special chars'}) %>
   </div>
   <div>
   	<%= label_tag :title, "Title:" , {:class => 'label_title'} %>
-  	<%= text_field_tag(:title, "", {:size=>60, :placeholder => 'the title of your collection'}) %>
+  	<%= text_field_tag(:title, @collection.title, {:size=>60, :placeholder => 'the title of your collection'}) %>
   </div>
   <div>
   	<%= label_tag :description, "Description:", :class => 'label_title' %>
-  	<%= text_area_tag(:description, "",:size=>'50x5') %>
+  	<%= text_area_tag(:description, @collection.description, :size=>'50x5') %>
   </div>
   <div>
   	<span class="label_title">Allowed Data Templates:</span>
   	<% @data_templates.each do |data_template| %>
-  		<%= check_box_tag(:data_template_ids, data_template._id) %>
+  	
+
+  	
+  		<%= check_box_tag(:data_template_ids, data_template._id, 
+  		(@collection.data_template_ids.include?(data_template._id) ? {:checked => 'checked'} : {:checked => false} )) %>
   		<%= label_tag(:data_template_ids, data_template.title) %><br/>
 	<% end %>
   </div>
   <div>
-  	<%= submit_tag("Create Collection") %>
+  	<%= submit_tag("Edit Collection") %>
   </div>
 <% end %>
 

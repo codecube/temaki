@@ -3,20 +3,25 @@ Temaki::Application.routes.draw do
   # first created -> highest priority.
     
     root :to => "collections#init"
+    
     #resources :collections
     
     match 'collections' => 'collections#index'
     match 'collections/new' => 'collections#new'
     match 'collections/create' => 'collections#create',:via => :post
+    match 'collection/:collection/edit' => 'collections#edit', :via => :get
+    match 'collection/:collection/update' => 'collections#update', :via => :post
+    match 'collection/:collection/delete' => 'collections#destroy', :via => :delete
     
+    #### Documents
     
     match 'collection/:collection' => 'documents#index', :via => :get
-    
     match 'collection/:collection/new' => 'documents#new', :via => :get
     match 'collection/:collection/create' => 'documents#create',:via => :post
     match 'collection/:collection/:id' => 'documents#show', :via => :get
     match 'collection/:collection/:id/edit' => 'documents#edit', :via => :get
-    match 'collection/:collection/:id/create' => 'documents#create', :via => :post
+    match 'collection/:collection/:id/update' => 'documents#update', :via => :post
+    match 'collection/:collection/:id/delete' => 'documents#destroy', :via => :delete
     
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

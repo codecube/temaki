@@ -8,11 +8,17 @@
 	<article class="table_item">
 		<div class="table_item_menu">
 			 <div>
-			 	<a href="/collection/<%=@collection.name%>/<%=document._id%>">
-				<%= image_tag "bt_enter_light.png" %></a></div>
+			 	<%= link_to image_tag("bt_enter_light.png", :border=>0),   
+ 						@collection.name+'/'+document._id.to_s %>
+			 	</div>
 			  	<div>
-			   		<a href="/collection/<%=@collection.name%>/<%=document._id%>/delete"><%= image_tag "bt_delete_light.png" %></a>
-					<a href="/collection/<%=@collection.name%>/<%=document._id%>/edit"><%= image_tag "bt_edit_light.png" %></a>
+			   		<%= link_to image_tag("bt_delete_light.png", :border=>0),   
+ 						@collection.name+'/'+document._id.to_s+'/delete', :confirm => 'Confirm Deletion?', :method => :delete %>
+ 						
+ 						<%= link_to image_tag("bt_edit_light.png", :border=>0),   
+ 						@collection.name+'/'+document._id.to_s+'/edit' %>
+			   	
+					
 				</div>
 			</div>
 		<a href="/collection/<%=@collection.name%>/<%=document._id%>">
@@ -20,6 +26,9 @@
 			<div class="cell"><h2><%=document.title%></h2>
 				<%=document.description%>
 			</div>
+			
+  
+			
 						
 			
 		</a>
