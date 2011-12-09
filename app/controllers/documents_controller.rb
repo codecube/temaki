@@ -45,7 +45,12 @@ class DocumentsController < ApplicationController
   
   def destroy
     data_document = DataDocument.find(params[:id])
-    data_document.destroy  
+     
+    
+    data_document.data_collections.each do |data_collection|
+      data_collection.inc(:count, -1)
+    end
+    data_document.destroy 
     redirect_to("/collection/"+params[:collection]) 
   end
   

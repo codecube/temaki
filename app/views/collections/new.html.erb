@@ -1,5 +1,5 @@
 <h1>Collection <span>> New</span></h1>
-<%= form_tag('/collections', :method => "post") do %>
+<%= form_tag('/collections/create', :method => "post") do %>
   <div>
   	<%= label_tag :name, "Name:", :class => 'label_title' %>
   	<%= text_field_tag(:name, "",{:size=>60, :placeholder => 'a unique name for your collection, avoid spaces and special chars'}) %>
