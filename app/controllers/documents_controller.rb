@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-
+   @document=DataDocument.find(params[:id])
   end
 
   def new

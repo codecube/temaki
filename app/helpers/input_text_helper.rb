@@ -8,10 +8,14 @@ module InputTextHelper
         html << "<div>#{label_tag name,label , {:class => 'label_title'} }#{text_field_tag name,data, {:size=>60, :placeholder=>tooltip} }</div>"
         html.html_safe
       end
+      
+      def text_render(data, field)
+        data
+      end
    
    def text_insert(hash, field, value)
-     hash[field] = value;
-     return hash;
+     hash[field] = value
+     hash
    end
   
   

@@ -1,4 +1,18 @@
-<h2>document</h2>
-<%=params[:collection]%>
-<%=@document["title"]%> 
-<%=@document["description"]%> 
+<h1><%= @collection.title%> <span>> Show</span></h1>
+<h2><%= @document.data_template.title%></h2>
+<%   @document.data_template.data_template_fields.each do |field| %>
+<div>
+	<div class="label_title">
+		<%= field.label%>
+	</div>
+	<%= send(field.input_type+'_render', @document[field.input_name], field) %>
+</div>
+<% end %>
+<div class="label_title">
+	Created:
+</div>
+<%= @document.created_at%>
+<div class="label_title">
+	Last Edited
+</div>
+<%= @document.updated_at%> 
