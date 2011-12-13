@@ -52,7 +52,7 @@ class CollectionsController < ApplicationController
   end
   
   def get_attribute_hash
-    {:name => params[:name], :title => params[:title],:description => params[:description], :count => 0 , :data_template_ids => [params[:data_template_ids]]}
+    {:name => params[:name], :title => params[:title],:description => params[:description], :data_template_ids => [params[:data_template_ids]]}
   end
   
 end
