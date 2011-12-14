@@ -13,7 +13,7 @@
 			 	</div>
 			  	<div>
 			   		<%= link_to image_tag("bt_delete_light.png", :border=>0),   
- 						@collection.name+'/'+document._id.to_s+'/delete', :confirm => 'Confirm Deletion?', :method => :delete %>
+ 						@collection.name+'/'+document._id.to_s+'/delete', :title => 'Confirm Deletion?', :class=>'dialog' %>
  						
  						<%= link_to image_tag("bt_edit_light.png", :border=>0),   
  						@collection.name+'/'+document._id.to_s+'/edit' %>

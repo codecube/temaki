@@ -11,7 +11,7 @@ Temaki::Application.routes.draw do
     match 'collections/create' => 'collections#create',:via => :post
     match 'collection/:collection/edit' => 'collections#edit', :via => :get
     match 'collection/:collection/update' => 'collections#update', :via => :post
-    match 'collection/:collection/delete' => 'collections#destroy', :via => :delete
+    match 'collection/:collection/delete' => 'collections#destroy', :via => :get
     
     #### Documents
     
@@ -21,7 +21,7 @@ Temaki::Application.routes.draw do
     match 'collection/:collection/:id' => 'documents#show', :via => :get
     match 'collection/:collection/:id/edit' => 'documents#edit', :via => :get
     match 'collection/:collection/:id/update' => 'documents#update', :via => :post
-    match 'collection/:collection/:id/delete' => 'documents#destroy', :via => :delete
+    match 'collection/:collection/:id/delete' => 'documents#destroy', :via => :get
     
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

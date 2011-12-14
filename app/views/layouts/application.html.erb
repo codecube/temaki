@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
 	<div id="container">
 		<nav id="top_nav">	
 			<%= image_tag "photo_thumb.png" %> <%=link_to "Codecube", "#"%> &nbsp; | &nbsp; <%=link_to "Settings", "#"%> &nbsp; | &nbsp; <%=link_to "Log Out", "#"%>
@@ -49,5 +50,9 @@
 			
 		</div>
 	</div>
+	<div id="dialog" title="Confirmation Required" style="display:none;">
+  		Are you sure about this?
+	</div>
+
 </body>
 </html>
