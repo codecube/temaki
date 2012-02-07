@@ -40,14 +40,24 @@ text = DataTemplateField.new(
    #input_colection:
 )
 
-page_template = DataTemplate.create(
-title: 'Page Template',
-description: 'Use this template to create a simple page',
-
-data_template_fields: [title, description, text]
+active = DataTemplateField.new(
+   label: 'Active',
+   tooltip: 'Define if this page is active',
+   required: false,
+   input_name: 'active',
+   input_type: 'checkbox',
+   input_properties: {}
+   #input_colection:
 )
 
-page = DataCollection.create(name: 'pages', title: 'Pages', description: 'Pages Collection', data_templates: [ page_template ], count: 0,)
+page_template = DataTemplate.create(
+title: 'Page Template 2',
+description: 'Use this template to create a simple page',
+
+data_template_fields: [title, description, text, active]
+)
+
+#page = DataCollection.create(name: 'pages', title: 'Pages', description: 'Pages Collection', data_templates: [ page_template ], count: 0,)
 
 
 

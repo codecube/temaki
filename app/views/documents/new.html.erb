@@ -1,15 +1,27 @@
 <h1><%= @collection.title%> <span>> New</span></h1>
-<%= form_tag("create", :method => "post") do %>
-
-<% @collection.data_templates.each do |data_template| %> <h2><%= data_template.title%></h2>
-<%  data_template.data_template_fields.each do |field| %>
-	<%= send(field.input_type+'_form', '', field) %>
-<% end %>
-<%= hidden_field_tag 'data_template_id', data_template._id %>
-<%= hidden_field_tag 'data_collection_ids[]', @collection._id %>
-<div>
-	<%= submit_tag("Create Document") %>
+<% if (@collection.data_templates.size>1)%> <h3>1. <span>Choose document template</span></h3>
+<div id="template_buttons">
+	<% @collection.data_templates.each do |data_template| %>
+	<input type="radio" id="<%= data_template._id%>"  name="radio" class="template_button"/>
+	<label for="<%= data_template._id%>" ><%= data_template.title%></label>
+	<br/>
+	<br/>
+	<% end %>
 </div>
 <% end %>
 
+<% @collection.data_templates.each do |data_template| %>
+<div id="<%= data_template._id%>_form" class="template_form">
+	<h3 style="display:none;">2. <span>Create document</span></h3>
+	<%= form_tag("create", :method => "post") do %>
+	<%  data_template.data_template_fields.each do |field| %>
+	<%= send(field.input_type+'_form', '', field) %>
+	<% end %>
+	<%= hidden_field_tag 'data_template_id', data_template._id %>
+	<%= hidden_field_tag 'data_collection_ids[]', @collection._id %>
+	<div>
+		<%= submit_tag("Create Document") %>
+	</div>
+	<% end %>
+</div>
 <% end %> 

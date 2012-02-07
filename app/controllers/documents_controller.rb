@@ -1,8 +1,11 @@
 class DocumentsController < ApplicationController
 
   before_filter :load_collection
+  @@items_per_page = 10
+  
+
   def index
-    @documents = DataDocument.all(conditions: {data_collection_ids: @collection._id}, sort: [[:created_at, :desc]])
+    @documents = DataDocument.all(conditions: {data_collection_ids: @collection._id}, sort: [[:created_at, :desc]]).page(params[:page]).per(@@items_per_page)
   end
 
   def show

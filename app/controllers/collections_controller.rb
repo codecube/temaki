@@ -1,11 +1,15 @@
 class CollectionsController < ApplicationController
+	@@items_per_page = 10
+	
 	def init
+	 
     redirect_to("/collections")
 
   end
 
   def index
-    @collections = DataCollection.all(sort: [[:created_at, :desc]])
+    
+    @collections = DataCollection.all(sort: [[:created_at, :desc]]).page(params[:page]).per(@@items_per_page)
   end
 
   # This action uses POST parameters. They are most likely coming
@@ -14,12 +18,20 @@ class CollectionsController < ApplicationController
   # sent as part of the request body.
   def create
     @collection = DataCollection.new(get_attribute_hash())
-    @collection.save
-    redirect_to("/collections")
+    if @collection.save
+      redirect_to("/collections")
+    else
+      @data_templates = load_templates()
+      flash[:error] = "There was a problem creating the Collection. It must have a title."
+      render :action => "new"
+
+    end
+    
   end
   
   def new
     @data_templates = load_templates()
+    @collection = DataCollection.new()
   end
   
   def edit

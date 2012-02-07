@@ -25,10 +25,19 @@ h1 {
 h1 span {
   font-size: 20px;
   color: #666666;
+ 
   
 }
 
-h2 {
+h3 {
+  font-size: 22px;
+  font-weight: normal;
+  color: $red;
+}
+
+h3 span {
+  font-size: 18px;
+  color: #666666;
   
 }
 
@@ -244,4 +253,24 @@ font-size: 11px;
   border-radius: 8px;
 }
 
+.pagination {
+  display: block;
+  margin-top:20px;
+}
+
+.pagination a {
+  display: inline;
+  }
+  
+.pagination .page {
+  padding: 3px;
+}
+
+.pagination .first, .pagination .last {
+  display: none;
+}
+
+.pagination .prev, .pagination .next {
+ padding: 10px;
+}
 

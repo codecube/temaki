@@ -2,16 +2,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#title").change(function(){
-				strVal= $("#title").val()
-				strVal = strVal.replace(/[^a-zA-Z 0-9]+/g,'');
-				strVal = strVal.replace(/[' ']+/g,'-');
+				strVal= remove_special_chars($("#title").val());
 				$("#name").val(strVal);
 			});
 	});
-	
-	
-
 </script>
+
+<%= flash[:error] %>
 
 <%= form_tag('/collections/create', :method => "post") do %>
   <div>
