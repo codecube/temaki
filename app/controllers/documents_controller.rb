@@ -1,7 +1,7 @@
 class DocumentsController < ApplicationController
 
   before_filter :load_collection
-  @@items_per_page = 10
+  @@items_per_page = 5
   
 
   def index

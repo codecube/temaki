@@ -260,17 +260,50 @@ font-size: 11px;
 
 .pagination a {
   display: inline;
+  
+  
   }
   
-.pagination .page {
-  padding: 3px;
+.pagination .page a , .pagination .prev a, .pagination .next  a{
+  display: block;
+  background-color: #666;
+  color: #FFF;
+  float: left;
+  padding: 5px 10px 5px 10px;
+  
+  margin: 1px;
+  float:left;
+  height: auto;
 }
 
-.pagination .first, .pagination .last {
+.pagination .prev a {
+  background: #666 image-url("bt_prev.png") no-repeat 2px 1px;
+}
+
+.pagination .next a {
+  background: #666 image-url("bt_next.png") no-repeat 2px 2px;
+  
+}
+
+.pagination .current {
+  display: block;
+  background-color: #000;
+  color: #FFF;
+  float: left;
+  padding: 5px 10px 5px 10px;
+  margin: 1px;
+  float:left;
+}
+
+.pagination .first, .pagination .last a {
   display: none;
 }
 
-.pagination .prev, .pagination .next {
- padding: 10px;
+
+
+.pagination .prev a:hover, .pagination .next  a:hover, .pagination .page a:hover {
+  background-color: #333;
+  
 }
+  
 
