@@ -4,8 +4,8 @@ module InputCheckboxHelper
         label =     field['label']
         tooltip =   field['tooltip']
         html = ""
-
-        html << "<div>#{label_tag name,label , {:class => 'label_title'} }#{check_box_tag name,true}</div>"
+          
+        html << "<div>#{label_tag name,label , {:class => 'label_title'} }#{check_box_tag name, data, data}</div>"
         html.html_safe
     end
       
