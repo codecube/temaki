@@ -37,11 +37,11 @@ myMarkdownSettings = {
 
 // mIu nameSpace to avoid conflict.
 miu = {
-    markdownTitle: function(markItUp, char) {
+    markdownTitle: function(markItUp, character) {
         heading = '';
         n = $.trim(markItUp.selection||markItUp.placeHolder).length;
         for(i = 0; i < n; i++) {
-            heading += char;
+            heading += character;
         }
         return '\n'+heading+'\n';
     }
