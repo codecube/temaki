@@ -33,6 +33,7 @@ GEM
     ansi (1.4.0)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
+    bluecloth (2.2.0)
     bson (1.4.0)
     bson_ext (1.4.0)
     builder (3.0.0)
@@ -84,6 +85,10 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
+    rails3_markitup (0.0.4)
+      bluecloth
+      bundler (~> 1.0)
+      rails (~> 3.1)
     railties (3.1.0)
       actionpack (= 3.1.0)
       activesupport (= 3.1.0)
@@ -121,12 +126,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bluecloth
   bson_ext (~> 1.4)
   coffee-rails (~> 3.1.0)
   jquery-rails
   kaminari
   mongoid (~> 2.3)
   rails (= 3.1.0)
+  rails3_markitup
   sass-rails (~> 3.1.0)
   turn
   uglifier

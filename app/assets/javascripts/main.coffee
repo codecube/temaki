@@ -2,6 +2,7 @@ $(document).ready ->
   $('.table_item').mouseenter ->
     $(this).children(".table_item_menu").show()
 
+  $('.markitup_form').markItUp(myMarkdownSettings)
   
   $('.table_item').mouseleave ->
     $(this).children(".table_item_menu").hide()

@@ -1,16 +1,26 @@
 #content form div {
   
-  margin:20px;
+ /* margin:20px;*/
 }
 
-#content form input, #content form textarea {
+
+
+#content form input, #content form .textarea {
   border: 1px solid #CCCCCC; 
   -moz-border-radius: 8px;
   border-radius: 8px;
   padding: 5px;
   margin-bottom: 10px;
+  font-family: Arial;
+    font-size: 0.9em;
   
 }
+
+.markitup_form {
+  
+}
+
+
 
 .label_title {
   font-weight:bold;
