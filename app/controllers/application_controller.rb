@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include InputTextareaHelper
   include InputCheckboxHelper
   include MarkupHelper
+  include SelectHelper
   protect_from_forgery
   
   helper :all

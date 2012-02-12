@@ -35,7 +35,7 @@ text = DataTemplateField.new(
    tooltip: 'Insert the Page Text',
    required: false,
    input_name: 'text',
-   input_type: 'textarea',
+   input_type: 'markup',
    input_properties: {"cols"=>30, "rows"=>10}
    #input_colection:
 )
@@ -50,11 +50,21 @@ active = DataTemplateField.new(
    #input_colection:
 )
 
+alignment = DataTemplateField.new(
+   label: 'Align',
+   tooltip: 'Define the page alignment',
+   required: false,
+   input_name: 'align',
+   input_type: 'select',
+   input_properties:{}, 
+   input_colection:[{'key'=>'left', 'value'=>'align left'},{'key'=>'right', 'value'=>'align right'}, {'key'=>'center', 'value'=>'align center'}]
+)
+
 page_template = DataTemplate.create(
-title: 'Page Template 2',
+title: 'Page Template 3',
 description: 'Use this template to create a simple page',
 
-data_template_fields: [title, description, text, active]
+data_template_fields: [title, description, text, active, alignment]
 )
 
 #page = DataCollection.create(name: 'pages', title: 'Pages', description: 'Pages Collection', data_templates: [ page_template ], count: 0,)
