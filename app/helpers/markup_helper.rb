@@ -10,7 +10,7 @@ module MarkupHelper
       end
       
       def markup_render(data, field)
-        data
+         BlueCloth.new(data).to_html
       end
    
    def markup_insert(hash, field, value)

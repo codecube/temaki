@@ -12,7 +12,7 @@ module SelectHelper
       end
       
       def select_render(data, field)
-        data
+       data
       end
    
    def select_insert(hash, field, value)
